@@ -3,6 +3,7 @@ package com.example.empl4sem2CRUD.service;
 import com.example.empl4sem2CRUD.model.User;
 import com.example.empl4sem2CRUD.repositories.UserRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
@@ -23,5 +24,8 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    //public void deleteById(int id)
+    @GetMapping
+    public void deleteById(int id){
+        userRepository.deleteById(id);
+    }
 }
